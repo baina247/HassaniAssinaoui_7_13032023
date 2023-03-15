@@ -34,6 +34,7 @@ const LogementImage = styled.img`
   width: 340px;
   height: 340px;
   border-radius: 10px;
+  object-fit: cover;
   flex: 1;
 `
 

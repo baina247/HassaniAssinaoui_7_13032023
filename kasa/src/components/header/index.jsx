@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/logo.png'
 
-const HeaderWrapper = styled.div`
+const LogoWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,9 +18,9 @@ const Logo = styled.img`
 
 function Header() {
   return (
-    <HeaderWrapper>
+    <LogoWrapper >
       <Logo src={logo} alt="Logo" />
-    </HeaderWrapper>
+    </LogoWrapper>
   )
 }
 
