@@ -8,15 +8,16 @@ const Nav = styled.nav`
   position: relative;
   padding: 0 10rem 0;
   bottom: 3rem;
-  color: #FF6060;
-  text-decoration-line: underline;
 `
 
 const NavLink = styled.a`
   margin-left: 30px;
-  font-size: 18px;
-  color: #333333;
+  font-size: 20px;
+  color: #FF6060;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 function Navigation() {
@@ -25,7 +26,7 @@ function Navigation() {
       <NavLink href="/">Accueil</NavLink>
       <NavLink href="/about">A propos</NavLink>
     </Nav>
-  )
+  );
 }
 
-export default Navigation
+export default Navigation;

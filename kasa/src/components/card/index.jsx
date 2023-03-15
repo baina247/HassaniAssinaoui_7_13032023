@@ -10,41 +10,52 @@ const LogementCard = styled.div`
   background: #f7f7f7;
   border-radius: 25px;
 `
+
 const Product = styled.div`
   display: flex;
+  flex-direction: column;
   width: 30%;
   height: 300px;
-  padding: 50px 0 0 0;
+  margin: 10px;
   border-radius: 10px;
 `
 
 const LogementImage = styled.img`
   border-radius: 10px;
+  flex: 1;
+`
+
+const LogementNameWrapper = styled.div`
+  position: relative;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  padding: 10px;
 `
 
 const LogementName = styled.h3`
-  position: relative;
-  left: -27rem;
-  top: 20px;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  color: blue;
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
 `
 
 const Card = () => {
-    return (
-      <LogementCard >
-        {logements.map((logement) => {
-          return (
-            <Product key={logement.id}>
-              <LogementImage src={logement.cover} />
+  return (
+    <LogementCard>
+      {logements.map((logement) => {
+        return (
+          <Product key={logement.id}>
+            <LogementImage src={logement.cover} />
+            <LogementNameWrapper>
               <LogementName>{logement.title}</LogementName>
-            </Product>
-          )
-        })}
-      </LogementCard>
-    )
+            </LogementNameWrapper>
+          </Product>
+        )
+      })}
+    </LogementCard>
+  )
 }
 
 export default Card

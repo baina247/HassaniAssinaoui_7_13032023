@@ -8,13 +8,9 @@ import About from './pages/about/index'
 // import Gallery from './components/gallery/index'
 // import Error from './pages/404/index'
 // import Footer from './components/footer/index'
-import { ThemeProvider, SurveyProvider } from './utils/context'
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ThemeProvider>
-        <SurveyProvider>
           <Header />
           <Navigation />
           <Switch>
@@ -32,8 +28,6 @@ ReactDOM.render(
         </Route> */}
           </Switch>
           {/* <Footer /> */}
-        </SurveyProvider>
-      </ThemeProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
