@@ -6,7 +6,7 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  padding: 0 10rem 0;
+  padding: 0 5rem 0;
   bottom: 3rem;
 `
 

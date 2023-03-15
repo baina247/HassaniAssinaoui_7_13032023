@@ -7,6 +7,7 @@ const LogementCard = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 50px;
+  padding-top: 56px;
   background: #f7f7f7;
   border-radius: 25px;
 `
@@ -14,9 +15,9 @@ const LogementCard = styled.div`
 const Product = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30%;
-  height: 300px;
-  margin: 10px;
+  width: 340px;
+  height: 340px;
+  padding: 10px;
   border-radius: 10px;
 `
 
@@ -27,7 +28,7 @@ const LogementImage = styled.img`
 
 const LogementNameWrapper = styled.div`
   position: relative;
-  bottom: 40px;
+  bottom: 60px;
   left: 0;
   right: 0;
   padding: 10px;
@@ -36,7 +37,7 @@ const LogementNameWrapper = styled.div`
 const LogementName = styled.h3`
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
   margin: 0;
 `

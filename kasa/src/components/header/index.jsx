@@ -9,7 +9,7 @@ const HeaderWrapper = styled.div`
   background-color: #ffffff;
   height: 80px;
   position: relative;
-  padding: 0 10rem 0;
+  padding: 0 5rem 0;
 `
 
 const Logo = styled.img`

@@ -7,14 +7,14 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
+`
+const BannerImage = styled.div`
+  width: 100%;
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  opacity: 0.9;
 `
-
 const BannerText = styled.h1`
   font-style: normal;
   font-weight: 500;
@@ -23,12 +23,13 @@ const BannerText = styled.h1`
   text-align: center;
   color: #ffffff;
 `
-
 const Banner = () => {
-    return (
-      <Section>
+  return (
+    <Section>
+      <BannerImage>
         <BannerText>Chez vous, partout et ailleurs</BannerText>
-      </Section>
-    )
-  }
-  export default Banner
+      </BannerImage>
+    </Section>
+  )
+}
+export default Banner
