@@ -6,17 +6,33 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  padding: 0 5rem 0;
+  padding: 0 6rem 0;
   bottom: 3rem;
 `
 
 const NavLink = styled.a`
+  position: relative;
   margin-left: 30px;
   font-size: 20px;
   color: #FF6060;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    transition: all 0.3s ease-out;
+    background-color: #FF6060;
+  }
+  &:before {
+    left: 50%;
+  }
+  &:after {
+    right: 50%;
+  }
+  &:hover:before, &:hover:after {
+    width: 50%;
   }
 `
 

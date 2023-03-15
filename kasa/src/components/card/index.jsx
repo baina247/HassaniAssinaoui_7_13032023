@@ -10,6 +10,9 @@ const LogementCard = styled.div`
   padding-top: 56px;
   background: #f7f7f7;
   border-radius: 25px;
+  &:hover{
+    color: blue;
+  }
 `
 
 const Product = styled.div`
@@ -17,7 +20,7 @@ const Product = styled.div`
   flex-direction: column;
   width: 340px;
   height: 340px;
-  padding: 10px;
+  padding: 30px;
   border-radius: 10px;
 `
 
