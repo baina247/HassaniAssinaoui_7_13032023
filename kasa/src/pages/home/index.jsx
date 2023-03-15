@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Banner from '../../components/banner/index'
-import GallerySection from '../../components/gallery'
+import Card from '../../components/card/index'
 
 const Body = styled.div`
   background-color: #ffffff;
@@ -12,7 +12,7 @@ function Home() {
   return (
     <Body>
       <Banner />
-      <GallerySection />
+      <Card />
     </Body>
   )
 }

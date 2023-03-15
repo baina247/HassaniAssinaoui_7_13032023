@@ -1,75 +1,50 @@
-import PropTypes from 'prop-types'
-import { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
-import DefaultPicture from '../../assets/profile.png'
-import { useTheme } from '../../utils/hooks'
+import logements from '../../data/logements.json'
 
-const CardLabel = styled.span`
-  color: ${({ theme }) => (theme === 'light' ? colors.primary : '#ffffff')};
-  font-size: 22px;
-  font-weight: normal;
-  padding-left: 15px;
-`
-
-const CardTitle = styled.div`
-  color: ${({ theme }) => (theme === 'light' ? '#000000' : '#ffffff')};
-  font-size: 22px;
-  font-weight: normal;
-  align-self: center;
-  height: 25px;
+const LogementCard = styled.div`
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  background: #f7f7f7;
+  border-radius: 25px;
 `
-
-const CardImage = styled.img`
-  height: 150px;
-  width: 150px;
-  align-self: center;
-  border-radius: 50%;
-`
-
-const CardWrapper = styled.div`
+const Product = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 15px;
-  background-color: ${({ theme }) =>
-    theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
-  border-radius: 30px;
-  width: 300px;
+  width: 30%;
   height: 300px;
-  &:hover {
-    cursor: pointer;
-  }
+  padding: 50px 0 0 0;
+  border-radius: 10px;
 `
 
-function Card({ label, title, picture }) {
-  const { theme } = useTheme()
-  const [isFavorite, setIsFavorite] = useState(false)
-  const star = isFavorite ? '⭐️' : ''
+const LogementImage = styled.img`
+  border-radius: 10px;
+`
 
-  return (
-    <CardWrapper theme={theme} onClick={() => setIsFavorite(!isFavorite)}>
-      <CardLabel theme={theme}>{label}</CardLabel>
-      <CardImage src={picture} alt="logements" />
-      <CardTitle theme={theme}>
-        {star} {title} {star}
-      </CardTitle>
-    </CardWrapper>
-  )
-}
+const LogementName = styled.h3`
+  position: relative;
+  left: -27rem;
+  top: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: blue;
+`
 
-Card.propTypes = {
-  label: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  picture: PropTypes.string.isRequired,
-}
-
-Card.defaultProps = {
-  label: '',
-  title: '',
-  picture: DefaultPicture,
+const Card = () => {
+    return (
+      <LogementCard >
+        {logements.map((logement) => {
+          return (
+            <Product key={logement.id}>
+              <LogementImage src={logement.cover} />
+              <LogementName>{logement.title}</LogementName>
+            </Product>
+          )
+        })}
+      </LogementCard>
+    )
 }
 
 export default Card
