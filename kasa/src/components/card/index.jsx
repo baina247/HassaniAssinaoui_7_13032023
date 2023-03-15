@@ -2,29 +2,36 @@ import React from 'react'
 import styled from 'styled-components'
 import logements from '../../data/logements.json'
 
-const LogementCard = styled.div`
+const LogementCardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 50px;
   padding-top: 56px;
+  padding-bottom: 56px;
   background: #f7f7f7;
   border-radius: 25px;
-  &:hover{
-    color: blue;
+`
+
+const LogementImageWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   }
 `
 
-const Product = styled.div`
-  display: flex;
-  flex-direction: column;
+const LogementImage = styled.img`
   width: 340px;
   height: 340px;
-  padding: 30px;
-  border-radius: 10px;
-`
-
-const LogementImage = styled.img`
   border-radius: 10px;
   flex: 1;
 `
@@ -47,18 +54,18 @@ const LogementName = styled.h3`
 
 const Card = () => {
   return (
-    <LogementCard>
+    <LogementCardWrapper>
       {logements.map((logement) => {
         return (
-          <Product key={logement.id}>
+          <LogementImageWrapper key={logement.id}>
             <LogementImage src={logement.cover} />
             <LogementNameWrapper>
               <LogementName>{logement.title}</LogementName>
             </LogementNameWrapper>
-          </Product>
+          </LogementImageWrapper>
         )
       })}
-    </LogementCard>
+    </LogementCardWrapper>
   )
 }
 
