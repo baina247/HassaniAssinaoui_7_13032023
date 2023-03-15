@@ -7,7 +7,7 @@ import Navigation from './components/nav/index'
 import Home from './pages/home/index'
 import About from './pages/about/index'
 // import Gallery from './components/gallery/index'
-// import Error from './pages/404/index'
+import Error from './pages/404/index'
 // import Footer from './components/footer/index'
 ReactDOM.render(
   <React.StrictMode>
@@ -24,10 +24,10 @@ ReactDOM.render(
         </Route>
         {/* <Route path="/gallery">
           <Gallery />
-        </Route>
+        </Route> */}
         <Route path="*">
           <Error />
-        </Route> */}
+        </Route>
       </Switch>
       {/* <Footer /> */}
     </Router>
