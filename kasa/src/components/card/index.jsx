@@ -8,7 +8,7 @@ const LogementCardWrapper = styled.div`
   justify-content: space-evenly;
   margin-top: 50px;
   padding-top: 56px;
-  padding-bottom: 56px;
+  padding-bottom: 6px;
   background: #f7f7f7;
   border-radius: 25px;
 `
@@ -21,6 +21,7 @@ const LogementImageWrapper = styled.div`
   flex-wrap: wrap;
   width: 340px;
   height: 340px;
+  margin-bottom: 50px;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   &:hover {
