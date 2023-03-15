@@ -9,7 +9,13 @@ const Section = styled.div`
   justify-content: center;
 `
 const BannerImage = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   width: 100%;
+  height: 220px;
   background-image: url(${bannerImage});
   background-size: cover;
   background-position: center;
