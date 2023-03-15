@@ -1,26 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../../assets/logo.png'
-
-const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-  height: 80px;
-  position: relative;
-  padding: 0 10rem 0;
-`
-
-const Logo = styled.img`
-  height: 50px;
-`
 
 const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 30%;
+  position: relative;
+  padding: 0 10rem 0;
+  bottom: 3rem;
+  color: #FF6060;
+  text-decoration-line: underline;
 `
 
 const NavLink = styled.a`
@@ -30,16 +19,13 @@ const NavLink = styled.a`
   text-decoration: none;
 `
 
-function Header() {
+function Navigation() {
   return (
-    <HeaderWrapper>
-      <Logo src={logo} alt="Logo" />
-      <Nav>
-        <NavLink href="/home">Accueil</NavLink>
-        <NavLink href="/about">A propos</NavLink>
-      </Nav>
-    </HeaderWrapper>
+    <Nav>
+      <NavLink href="/">Accueil</NavLink>
+      <NavLink href="/about">A propos</NavLink>
+    </Nav>
   )
 }
 
-export default Header
+export default Navigation
