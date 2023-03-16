@@ -6,9 +6,9 @@ import Header from './components/header/index'
 import Navigation from './components/nav/index'
 import Home from './pages/home/index'
 import About from './pages/about/index'
-// import Gallery from './components/gallery/index'
+import Gallery from './components/gallery/index'
 import Error from './pages/404/index'
-// import Footer from './components/footer/index'
+import Footer from './components/footer/index'
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -22,14 +22,14 @@ ReactDOM.render(
         <Route path="/about">
           <About />
         </Route>
-        {/* <Route path="/gallery">
+        <Route path="/gallery">
           <Gallery />
-        </Route> */}
+        </Route>
         <Route path="*">
           <Error />
         </Route>
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

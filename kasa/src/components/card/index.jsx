@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 import logements from '../../data/logements.json'
 import colors from '../../utils/style/colors'
 
@@ -55,17 +56,25 @@ const LogementName = styled.h3`
   margin: 0;
 `
 
+const LogementCard = ({ logement }) => {
+  return (
+    <Link to={`/gallery/${logement.id}`} style={{ textDecoration: 'none' }}>
+      <LogementImageWrapper>
+        <LogementImage src={logement.cover} />
+        <LogementNameWrapper>
+          <LogementName>{logement.title}</LogementName>
+        </LogementNameWrapper>
+      </LogementImageWrapper>
+    </Link>
+  )
+}
+
 const Card = () => {
   return (
     <LogementCardWrapper>
       {logements.map((logement) => {
         return (
-          <LogementImageWrapper key={logement.id}>
-            <LogementImage src={logement.cover} />
-            <LogementNameWrapper>
-              <LogementName>{logement.title}</LogementName>
-            </LogementNameWrapper>
-          </LogementImageWrapper>
+          <LogementCard key={logement.id} logement={logement} />
         )
       })}
     </LogementCardWrapper>
