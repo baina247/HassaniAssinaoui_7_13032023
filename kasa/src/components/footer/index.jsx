@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/footer_logo.png'
+import colors from '../../utils/style/colors'
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -28,7 +29,7 @@ const FooterText = styled.div`
   font-style: normal;
   font-size: 24px;
   font-weight: 500;
-  color: #ffffff;
+  color: ${colors.primary};
 `
 
 function Footer() {

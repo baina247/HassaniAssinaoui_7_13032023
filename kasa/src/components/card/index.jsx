@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logements from '../../data/logements.json'
+import colors from '../../utils/style/colors'
 
 const LogementCardWrapper = styled.div`
   display: flex;
@@ -50,7 +51,7 @@ const LogementName = styled.h3`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  color: #ffffff;
+  color: ${colors.primary};
   margin: 0;
 `
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import bannerImage from '../../assets/banner_img.png'
+import colors from '../../utils/style/colors'
 
 const Section = styled.div`
   display: flex;
@@ -25,9 +26,8 @@ const BannerText = styled.h1`
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
-  line-height: 142.6%;
   text-align: center;
-  color: #ffffff;
+  color: ${colors.primary};
 `
 const Banner = () => {
   return (
