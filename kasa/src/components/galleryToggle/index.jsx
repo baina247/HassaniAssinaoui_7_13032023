@@ -49,50 +49,74 @@ const ToggleTextContent = styled.p`
   line-height: 26px;
   color: ${colors.secondary};
 `
+
 const ToggleWrapper = styled.div`
   width: 45%;
 `
 
-const Toggle = ({ title, content }) => {
-  const [isActive, setIsActive] = useState(false)
+const EquipmentsList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+`
 
-  const toggle = () => {
-    setIsActive(!isActive)
-  }
-
-  return (
-    <>
-      <ToggleTextWrapper onClick={toggle}>
-        {title}
-        <ArrowIcon src={isActive ? UpArrowImg : DownArrowImg} />
-      </ToggleTextWrapper>
-      {isActive && <ToggleContentWrapper>{content}</ToggleContentWrapper>}
-    </>
-  )
-}
+const EquipmentsListItem = styled.li`
+  margin-bottom: 10px;
+`
 
 const GalleryToggle = () => {
   const { idLogement } = useParams()
   const logement = data.find((product) => product.id === idLogement)
   const { description, equipments } = logement
 
+  const Toggle = ({ title, content }) => {
+    const [isActive, setIsActive] = useState(false)
+
+    const toggle = () => {
+      setIsActive(!isActive)
+    }
+
+    return (
+      <>
+        <ToggleTextWrapper onClick={toggle}>
+          {title}
+          <ArrowIcon src={isActive ? UpArrowImg : DownArrowImg} />
+        </ToggleTextWrapper>
+        {isActive && content}
+      </>
+    )
+  }
+
   return (
     <Section>
       <ToggleWrapper>
         <Toggle
           title="Description"
-          content={<ToggleTextContent>{description}</ToggleTextContent>}
+          content={
+            <ToggleContentWrapper>
+              <ToggleTextContent>{description}</ToggleTextContent>
+            </ToggleContentWrapper>
+          }
         />
       </ToggleWrapper>
       <ToggleWrapper>
         <Toggle
           title="Equipements"
           content={
-            <ToggleTextContent>{equipments.join(', ')}</ToggleTextContent>
+            <ToggleContentWrapper>
+              <EquipmentsList>
+                {equipments.map((equipment, index) => (
+                  <EquipmentsListItem key={index}>
+                    <ToggleTextContent>{equipment}</ToggleTextContent>
+                  </EquipmentsListItem>
+                ))}
+              </EquipmentsList>
+            </ToggleContentWrapper>
           }
         />
       </ToggleWrapper>
     </Section>
   )
 }
+
 export default GalleryToggle
