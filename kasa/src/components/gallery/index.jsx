@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Carousel from '../carousel'
+import GalleryInformation from '../galleryInformation'
 import GalleryToggle from '../galleryToggle'
 
 const Section = styled.div`
@@ -15,6 +16,7 @@ const Gallery = () => {
   return (
     <Section>
       <Carousel />
+      <GalleryInformation />
       <GalleryToggle />
     </Section>
   )

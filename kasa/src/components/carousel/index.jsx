@@ -12,10 +12,8 @@ const CarouselContainer = styled.div`
 `
 
 const CarouselContent = styled.div`
-  position: relative;
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   display: flex;
