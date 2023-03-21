@@ -63,16 +63,18 @@ const RightSection = styled.div`
 
 const Host = styled.h2`
   font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 30px;
   margin-bottom: 10px;
   color: ${colors.secondary};
-  align-self: flex-end;
+  display: flex;
+  width: 75%;
+  align-items: center;
+  margin: -30px 0 0 0;
 `
 
 const Image = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
   object-fit: cover;
   align-self: flex-end;
@@ -100,21 +102,19 @@ const TitleWrapper = styled.div`
 `
 
 const GalleryInformation = () => {
-  const { idLogement } = useParams();
-  const logement = data.find((product) => product.id === idLogement);
-  const { title, host } = logement;
-  const { name, picture } = host;
-  const { rating, location, tags } = logement;
+  const { idLogement } = useParams()
+  const logement = data.find((product) => product.id === idLogement)
+  const { title, host } = logement
+  const { name, picture } = host
+  const { rating, location, tags } = logement
 
-  const stars = new Array(5).fill(grayStar).fill(redStar, 0, rating);
+  const stars = new Array(5).fill(grayStar).fill(redStar, 0, rating)
 
   return (
     <Wrapper>
       <LeftSection>
         <TitleWrapper>
           <Title>{title}</Title>
-          <Host>{name}</Host>
-          <Image src={picture} alt={name} />
         </TitleWrapper>
         <Location>{location}</Location>
         <Tags>
@@ -124,6 +124,10 @@ const GalleryInformation = () => {
         </Tags>
       </LeftSection>
       <RightSection>
+        <Host>
+          {name}
+          <Image src={picture} alt={name} />
+        </Host>
         <Rating>
           <Rate>
             {stars.map((star, index) => (
