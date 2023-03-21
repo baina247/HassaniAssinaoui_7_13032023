@@ -40,7 +40,7 @@ function Navigation() {
   return (
     <Nav>
       <NavLink href="/">Accueil</NavLink>
-      <NavLink href="/about">A propos</NavLink>
+      <NavLink href="/about">A Propos</NavLink>
     </Nav>
   );
 }

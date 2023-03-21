@@ -7,23 +7,21 @@ import colors from '../../utils/style/colors'
 const LogementCardWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: 50px;
-  padding-top: 56px;
-  padding-bottom: 6px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background: #f7f7f7;
   border-radius: 25px;
 `
 
 const LogementImageWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-wrap: wrap;
   width: 340px;
   height: 340px;
-  margin-bottom: 50px;
+  margin: 35px;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   &:hover {

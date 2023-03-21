@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import DownArrowImg from '../../assets/down_arrow.svg'
 import UpArrowImg from '../../assets/up_arrow.svg'
-import Carousel from '../carroussel'
+import Carousel from '../carousel'
 
 const Section = styled.div`
   display: flex;
