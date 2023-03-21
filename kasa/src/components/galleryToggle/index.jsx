@@ -29,6 +29,9 @@ const ToggleTextWrapper = styled.div`
   color: ${colors.primary};
   border-radius: 10px;
   cursor: pointer;
+  weight: 500;
+  font-size: 18px;
+  line-height: 26px;
 `
 
 const ToggleContentWrapper = styled.div`
