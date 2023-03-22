@@ -8,7 +8,7 @@ const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: ${colors.black};
   height: 10rem;
   margin-top: 3rem;
 `

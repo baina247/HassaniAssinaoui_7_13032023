@@ -49,7 +49,7 @@ const LogementCardWrapper = styled.div`
   margin-top: 50px;
   padding-top: 25px;
   padding-bottom: 25px;
-  background: #f7f7f7;
+  background: ${colors.dark};
   border-radius: 25px;
 `
 

@@ -27,7 +27,7 @@ const AboutTextWrapper = styled.div`
   line-height: 30px;
   text-align: center;
   color: ${colors.primary};
-  background: #ff6060;
+  background: ${colors.secondary};
   align-items: center;
   padding: 10px;
   margin-top: 30px;
@@ -39,7 +39,7 @@ const ToggleContentWrapper = styled.div`
   top: -10px;
   width: 80%;
   z-index: -1;
-  background: #f7f7f7;
+  background: ${colors.dark};
   border-radius: 5px;
   padding: 10px;
 `

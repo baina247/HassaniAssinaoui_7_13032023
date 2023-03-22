@@ -39,7 +39,7 @@ const ToggleContentWrapper = styled.div`
   margin-top: -10px;
   padding: 15px;
   z-index: -1;
-  background-color: #f6f6f6;
+  background-color: ${colors.dark};
   border-radius: 10px;
   flex: 1;
 `
