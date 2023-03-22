@@ -41,6 +41,7 @@ const ToggleContentWrapper = styled.div`
   z-index: -1;
   background-color: #f6f6f6;
   border-radius: 10px;
+  flex: 1;
 `
 
 const ToggleTextContent = styled.p`
@@ -52,6 +53,8 @@ const ToggleTextContent = styled.p`
 
 const ToggleWrapper = styled.div`
   width: 45%;
+  display: flex;
+  flex-direction: column;
 `
 
 const EquipmentsList = styled.ul`
