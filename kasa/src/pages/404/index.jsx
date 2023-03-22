@@ -15,7 +15,8 @@ const Illustration = styled.img`
   display: flex;
   align-items: center;
   text-align: center;
-  max-width: 800px;
+  width: 600px;
+  height: 265px;
 `
 
 const ErrorSubtitle = styled.h2`
@@ -41,7 +42,7 @@ const ErrorBackToHome = styled.a`
 function Error() {
   return (
     <ErrorWrapper>
-      <Illustration src={error404} />
+      <Illustration src={error404} alt="Image code érreur 404"/>
       <ErrorSubtitle>
         Oups! La page que vous demandez n'existe pas.
       </ErrorSubtitle>

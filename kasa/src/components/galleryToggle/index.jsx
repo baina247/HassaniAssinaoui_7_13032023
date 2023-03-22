@@ -83,7 +83,10 @@ const GalleryToggle = () => {
       <>
         <ToggleTextWrapper onClick={toggle}>
           {title}
-          <ArrowIcon src={isActive ? UpArrowImg : DownArrowImg} />
+          <ArrowIcon
+            src={isActive ? UpArrowImg : DownArrowImg}
+            alt={isActive ? 'Icône flèche du haut' : 'Icône flèche du bas'}
+          />
         </ToggleTextWrapper>
         {isActive && content}
       </>

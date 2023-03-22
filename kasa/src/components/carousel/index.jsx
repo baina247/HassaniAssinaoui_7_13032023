@@ -51,9 +51,6 @@ const Arrow = styled.img`
   transform: translateY(-50%);
   z-index: 2;
   cursor: pointer;
-  width: 50px;
-  height: 100px;
-
 `
 
 const LeftArrow = styled(Arrow)`
