@@ -47,10 +47,9 @@ const Tag = styled.span`
   background-color: ${colors.secondary};
   font-weight: 500;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 10px;
   padding: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
   border-radius: 15px;
   color: ${colors.primary};
 `
@@ -63,22 +62,19 @@ const RightSection = styled.div`
 
 const Host = styled.h2`
   font-weight: 500;
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 40px;
   color: ${colors.secondary};
   display: flex;
   width: 75%;
   align-items: center;
-  margin: -30px 0 0 0;
 `
 
 const Image = styled.img`
-  width: 90px;
-  height: 90px;
+  width: 64px;
+  height: 64px;
   border-radius: 100%;
   object-fit: cover;
-  align-self: flex-end;
-  margin-bottom: 10px;
 `
 
 const Rating = styled.div`

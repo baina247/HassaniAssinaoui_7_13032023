@@ -1,18 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import logements from '../../data/logements.json'
 import colors from '../../utils/style/colors'
 
-const LogementCardWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 50px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  background: #f7f7f7;
-  border-radius: 25px;
+const LogementImage = styled.img`
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex: 1;
 `
 
 const LogementImageWrapper = styled.div`
@@ -21,21 +18,12 @@ const LogementImageWrapper = styled.div`
   flex-wrap: wrap;
   width: 340px;
   height: 340px;
-  margin: 35px;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.05);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   }
-`
-
-const LogementImage = styled.img`
-  width: 340px;
-  height: 340px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex: 1;
 `
 
 const LogementNameWrapper = styled.div`
@@ -52,6 +40,25 @@ const LogementName = styled.h3`
   font-size: 18px;
   color: ${colors.primary};
   margin: 0;
+`
+
+const LogementCardWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #f7f7f7;
+  border-radius: 25px;
+`
+
+const LogementCardContainer = styled.div`
+  width: 20%;
+  margin: 30px 10px;
+  &:not(:nth-child(4n)) {
+    margin-right: 10px;
+  }
 `
 
 const LogementCard = ({ logement }) => {
@@ -72,7 +79,9 @@ const Card = () => {
     <LogementCardWrapper>
       {logements.map((logement) => {
         return (
-          <LogementCard key={logement.id} logement={logement} />
+          <LogementCardContainer key={logement.id}>
+            <LogementCard logement={logement} />
+          </LogementCardContainer>
         )
       })}
     </LogementCardWrapper>
