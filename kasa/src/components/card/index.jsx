@@ -34,7 +34,7 @@ const LogementNameWrapper = styled.div`
   padding: 10px;
 `
 
-const LogementName = styled.h3`
+const LogementName = styled.h2`
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -65,7 +65,7 @@ const LogementCard = ({ logement }) => {
   return (
     <Link to={`/gallery/${logement.id}`} style={{ textDecoration: 'none' }}>
       <LogementImageWrapper>
-        <LogementImage src={logement.cover} />
+        <LogementImage src={logement.cover} alt="Photo vitrine logement" />
         <LogementNameWrapper>
           <LogementName>{logement.title}</LogementName>
         </LogementNameWrapper>

@@ -32,7 +32,7 @@ const BannerText = styled.h1`
 const Banner = () => {
   return (
     <Section>
-      <BannerImage>
+      <BannerImage alt="Logo de la bannière">
         <BannerText>Chez vous, partout et ailleurs</BannerText>
       </BannerImage>
     </Section>
