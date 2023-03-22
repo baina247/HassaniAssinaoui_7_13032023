@@ -20,7 +20,7 @@ const Logo = styled.img`
 function Header() {
   return (
     <LogoWrapper >
-      <Logo src={logo} alt="Logo" />
+      <Logo src={logo} alt="Image du header montrant le logo du site" />
     </LogoWrapper>
   )
 }

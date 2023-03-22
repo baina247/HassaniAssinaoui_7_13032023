@@ -17,7 +17,12 @@ const BannerImage = styled.div`
   align-content: center;
   width: 100%;
   height: 220px;
-  background-image: url(${bannerImage});
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(${bannerImage});
   background-size: cover;
   background-position: center;
   border-radius: 25px;
@@ -32,7 +37,7 @@ const BannerText = styled.h1`
 const Banner = () => {
   return (
     <Section>
-      <BannerImage alt="Logo de la bannière">
+      <BannerImage alt="Image de la bannière montrant une chaine de montagne et l'océan">
         <BannerText>Chez vous, partout et ailleurs</BannerText>
       </BannerImage>
     </Section>

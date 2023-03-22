@@ -10,6 +10,7 @@ const LogementImage = styled.img`
   border-radius: 10px;
   object-fit: cover;
   flex: 1;
+  filter: brightness(80%);
 `
 
 const LogementImageWrapper = styled.div`
