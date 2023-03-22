@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import data from '../../data/logements.json';
-import leftArrow from '../../assets/left_carroussel.png';
-import rightArrow from '../../assets/right_carroussel.png';
+import leftArrow from '../../assets/left_carroussel.webp';
+import rightArrow from '../../assets/right_carroussel.webp';
 import { useParams } from 'react-router-dom';
 
 const CarouselContainer = styled.div`

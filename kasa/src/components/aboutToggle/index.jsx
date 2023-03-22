@@ -75,6 +75,11 @@ const AboutToggle = () => {
         Fiable
         <ArrowIcon
           src={activeIndexes.includes(0) ? UpArrowImg : DownArrowImg}
+          alt={
+            activeIndexes.includes(0)
+              ? 'Icône flèche du haut'
+              : 'Icône flèche du bas'
+          }
         />
       </AboutTextWrapper>
       {activeIndexes.includes(0) && (
@@ -90,6 +95,11 @@ const AboutToggle = () => {
         Respect
         <ArrowIcon
           src={activeIndexes.includes(1) ? UpArrowImg : DownArrowImg}
+          alt={
+            activeIndexes.includes(1)
+              ? 'Icône flèche du haut'
+              : 'Icône flèche du bas'
+          }
         />
       </AboutTextWrapper>
       {activeIndexes.includes(1) && (
@@ -105,6 +115,11 @@ const AboutToggle = () => {
         Service
         <ArrowIcon
           src={activeIndexes.includes(2) ? UpArrowImg : DownArrowImg}
+          alt={
+            activeIndexes.includes(2)
+              ? 'Icône flèche du haut'
+              : 'Icône flèche du bas'
+          }
         />
       </AboutTextWrapper>
       {activeIndexes.includes(2) && (
@@ -120,6 +135,11 @@ const AboutToggle = () => {
         Responsabilité
         <ArrowIcon
           src={activeIndexes.includes(3) ? UpArrowImg : DownArrowImg}
+          alt={
+            activeIndexes.includes(3)
+              ? 'Icône flèche du haut'
+              : 'Icône flèche du bas'
+          }
         />
       </AboutTextWrapper>
       {activeIndexes.includes(3) && (

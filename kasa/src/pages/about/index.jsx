@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import AboutImg from '../../assets/about_img.png'
+import AboutImg from '../../assets/about_img.webp'
 import AboutToggle from '../../components/aboutToggle'
 
 

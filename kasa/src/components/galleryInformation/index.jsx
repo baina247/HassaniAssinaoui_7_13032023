@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import data from '../../data/logements.json'
 import colors from '../../utils/style/colors'
-import redStar from '../../assets/red_star.png'
-import grayStar from '../../assets/gray_star.png'
+import redStar from '../../assets/red_star.webp'
+import grayStar from '../../assets/gray_star.webp'
 
 const Wrapper = styled.div`
   margin: 30px 0 0 0;

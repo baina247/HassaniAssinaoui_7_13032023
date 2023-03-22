@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import colors from '../../utils/style/colors'
 
 const LogoWrapper = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import bannerImage from '../../assets/banner_img.png'
+import bannerImage from '../../assets/banner_img.webp'
 import colors from '../../utils/style/colors'
 
 const Section = styled.div`
