@@ -57,9 +57,6 @@ const LogementCardWrapper = styled.div`
 const LogementCardContainer = styled.div`
   width: 20%;
   margin: 30px 10px;
-  &:not(:nth-child(4n)) {
-    margin-right: 10px;
-  }
 `
 
 const LogementCard = ({ logement }) => {

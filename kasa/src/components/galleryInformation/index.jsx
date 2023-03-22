@@ -23,7 +23,7 @@ const LeftSection = styled.div`
 
 const Title = styled.h1`
   font-weight: 500;
-  font-size: 56px;
+  font-size: 45px;
   line-height: 52px;
   color: ${colors.secondary};
   margin-bottom: 10px;
