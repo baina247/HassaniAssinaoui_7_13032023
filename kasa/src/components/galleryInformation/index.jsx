@@ -3,8 +3,9 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import data from '../../data/logements.json'
 import colors from '../../utils/style/colors'
-import redStar from '../../assets/red_star.webp'
-import grayStar from '../../assets/gray_star.webp'
+import TagInformation from '../tag'
+import RatingInformation from '../rating'
+import HostInformation from '../host'
 
 const Wrapper = styled.div`
   margin: 30px 0 0 0;
@@ -37,58 +38,10 @@ const Location = styled.div`
   margin-bottom: 10px;
 `
 
-const Tags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-`
-
-const Tag = styled.span`
-  background-color: ${colors.secondary};
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 10px;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
-  color: ${colors.primary};
-`
-
 const RightSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-`
-
-const Host = styled.h2`
-  font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 40px;
-  color: ${colors.secondary};
-  display: flex;
-  width: 75%;
-  align-items: center;
-`
-
-const Image = styled.img`
-  width: 64px;
-  height: 64px;
-  border-radius: 100%;
-  object-fit: cover;
-`
-
-const Rating = styled.div`
-  font-weight: bold;
-  align-self: flex-end;
-`
-
-const Rate = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const StarImage = styled.img`
-  margin-right: 5px;
 `
 
 const TitleWrapper = styled.div`
@@ -100,11 +53,8 @@ const TitleWrapper = styled.div`
 const GalleryInformation = () => {
   const { idLogement } = useParams()
   const logement = data.find((product) => product.id === idLogement)
-  const { title, host } = logement
-  const { name, picture } = host
-  const { rating, location, tags } = logement
-
-  const stars = new Array(5).fill(grayStar).fill(redStar, 0, rating)
+  const { title } = logement
+  const { location } = logement
 
   return (
     <Wrapper>
@@ -113,24 +63,11 @@ const GalleryInformation = () => {
           <Title>{title}</Title>
         </TitleWrapper>
         <Location>{location}</Location>
-        <Tags>
-          {tags.map((tag, index) => (
-            <Tag key={index}>{tag}</Tag>
-          ))}
-        </Tags>
+        <TagInformation />
       </LeftSection>
       <RightSection>
-        <Host>
-          {name}
-          <Image src={picture} alt={name} />
-        </Host>
-        <Rating>
-          <Rate>
-            {stars.map((star, index) => (
-              <StarImage src={star} key={index} alt="star" />
-            ))}
-          </Rate>
-        </Rating>
+        <HostInformation />
+        <RatingInformation />
       </RightSection>
     </Wrapper>
   )

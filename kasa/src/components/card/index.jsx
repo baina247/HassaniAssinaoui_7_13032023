@@ -52,11 +52,22 @@ const LogementCardWrapper = styled.div`
   padding-bottom: 25px;
   background: ${colors.dark};
   border-radius: 25px;
+
+  @media (max-width: 600px) {
+    background: none;
+    margin-top: unset;
+    padding-bottom: unset;
+  }
 `
 
 const LogementCardContainer = styled.div`
-  width: 20%;
-  margin: 30px 10px;
+  flex: 1 0 340px;
+  min-width: 250px;
+  margin: 30px 20px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const LogementCard = ({ logement }) => {
