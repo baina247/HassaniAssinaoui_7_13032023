@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import error404 from '../../assets/404.svg'
 
 const ErrorWrapper = styled.div`
   margin: 100px;
@@ -11,12 +10,15 @@ const ErrorWrapper = styled.div`
   align-items: center;
 `
 
-const Illustration = styled.img`
+const ErrorText = styled.h1`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 288px;
   display: flex;
   align-items: center;
   text-align: center;
-  width: 600px;
-  height: 265px;
+  color: ${colors.secondary};
+  margin-bottom: 24px;
 `
 
 const ErrorSubtitle = styled.h2`
@@ -42,7 +44,7 @@ const ErrorBackToHome = styled.a`
 function Error() {
   return (
     <ErrorWrapper>
-      <Illustration src={error404} alt="Image code érreur 404"/>
+      <ErrorText>404</ErrorText>
       <ErrorSubtitle>
         Oups! La page que vous demandez n'existe pas.
       </ErrorSubtitle>
