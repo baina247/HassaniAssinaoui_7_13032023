@@ -25,6 +25,10 @@ const LogementImageWrapper = styled.div`
     transform: scale(1.05);
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
   }
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const LogementNameWrapper = styled.div`
@@ -55,8 +59,9 @@ const LogementCardWrapper = styled.div`
 
   @media (max-width: 600px) {
     background: none;
-    margin-top: unset;
+    padding-top: unset;
     padding-bottom: unset;
+    margin-top: 35px;
   }
 `
 
@@ -66,7 +71,7 @@ const LogementCardContainer = styled.div`
   margin: 30px 20px;
 
   @media (max-width: 600px) {
-    width: 100%;
+    margin: unset;
   }
 `
 

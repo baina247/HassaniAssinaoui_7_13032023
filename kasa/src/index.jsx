@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom/client'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import StyledGlobalStyle from './utils/style/globalStyle'
 import Header from './components/header/index'
@@ -9,13 +9,16 @@ import Gallery from './components/gallery/index'
 import Error from './pages/404/index'
 import Footer from './components/footer/index'
 
-ReactDOM.render(
+//Nouvelle syntax React 18
+const root = document.getElementById('root')
+//Nouvelle syntax React 18
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <Router>
       <StyledGlobalStyle />
       <Header />
       <Switch>
-        <Route exact path="/">
+        <Route path="/" exact>
           <Home />
         </Route>
         <Route path="/about">
@@ -30,6 +33,5 @@ ReactDOM.render(
       </Switch>
       <Footer />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
