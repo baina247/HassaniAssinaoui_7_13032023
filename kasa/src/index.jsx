@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import StyledGlobalStyle from './utils/style/globalStyle'
 import Header from './components/header/index'
-import Navigation from './components/nav/index'
 import Home from './pages/home/index'
 import About from './pages/about/index'
 import Gallery from './components/gallery/index'
@@ -15,7 +14,6 @@ ReactDOM.render(
     <Router>
       <StyledGlobalStyle />
       <Header />
-      <Navigation />
       <Switch>
         <Route exact path="/">
           <Home />
