@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import data from '../../data/logements.json';
-import leftArrow from '../../assets/left_carroussel.webp';
-import rightArrow from '../../assets/right_carroussel.webp';
-import { useParams } from 'react-router-dom';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import data from '../../data/logements.json'
+import leftArrow from '../../assets/left_carroussel.webp'
+import rightArrow from '../../assets/right_carroussel.webp'
+import { useParams } from 'react-router-dom'
 
 const CarouselContainer = styled.div`
   position: relative;
@@ -62,29 +62,33 @@ const RightArrow = styled(Arrow)`
 `
 
 const Carousel = () => {
-  const [current, setCurrent] = useState(0);
+  // Initialiser les variables d'état
+  const [current, setCurrent] = useState(0) // index actuel de l'image affichée
+  const [setScrollPosition] = useState(0) // position de défilement horizontal du carrousel
 
-  const [setScrollPosition] = useState(0);
-
+  // Gestionnaire d'événements pour faire défiler le carrousel
   const handleScroll = (e) => {
-    setScrollPosition(e.target.scrollLeft);
-  };
+    setScrollPosition(e.target.scrollLeft) // mettre à jour la position de défilement
+  }
 
+  // Gestionnaire d'événements pour cliquer sur le bouton flèche gauche
   const handleLeftArrowClick = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+    setCurrent(current === 0 ? length - 1 : current - 1) // passer à l'image précédente
+  }
 
+  // Gestionnaire d'événements pour cliquer sur le bouton flèche droite
   const handleRightArrowClick = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+    setCurrent(current === length - 1 ? 0 : current + 1) // passer à l'image suivante
+  }
 
-  const { idLogement } = useParams();
-  const logement = data.find((product) => product.id === idLogement);
+  const { idLogement } = useParams()
+  const logement = data.find((product) => product.id === idLogement)
 
-  const length = logement.pictures.length;
+  const length = logement.pictures.length // nombre de photos pour le logement actuel
 
   return (
     <CarouselContainer>
+      {/* Afficher le bouton fléché vers la gauche uniquement lorsqu'il y a plus d'une image */}
       {length > 1 && (
         <LeftArrow
           src={leftArrow}
@@ -93,15 +97,22 @@ const Carousel = () => {
         />
       )}
 
+      {/* Conteneur de contenu du carrousel */}
       <CarouselContent id="carousel" onScroll={handleScroll}>
+        {/* Cartographier les images et afficher uniquement l'image qui correspond à l'index actuel */}
         {logement.pictures.map(
           (picture, index) =>
             index === current && (
-              <CarouselImg key={picture} src={picture} alt={logement.title} />
+              <CarouselImg
+                key={picture}
+                src={picture}
+                alt="Photo du logement"
+              />
             )
         )}
       </CarouselContent>
 
+      {/* Afficher le bouton fléché vers la droite uniquement lorsqu'il y a plus d'une image */}
       {length > 1 && (
         <RightArrow
           src={rightArrow}
@@ -110,7 +121,7 @@ const Carousel = () => {
         />
       )}
     </CarouselContainer>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel
