@@ -69,19 +69,25 @@ const EquipmentsListItem = styled.li`
 `
 
 const GalleryToggle = () => {
+  // Récupérer le paramètre idLogement à partir de l'URL
   const { idLogement } = useParams()
+  // Trouver le logement dans le tableau de données en fonction du paramètre idLogement
   const logement = data.find((product) => product.id === idLogement)
+  // Déstructurer la description et les équipements de l'objet logement
   const { description, equipments } = logement
 
   const Toggle = ({ title, content }) => {
+    // Définir l'état de la bascule
     const [isActive, setIsActive] = useState(false)
 
+    // Fonction pour basculer l'état
     const toggle = () => {
       setIsActive(!isActive)
     }
 
     return (
       <>
+        {/* Titre de la bascule, avec une icône de flèche qui change en fonction de l'état */}
         <ToggleTextWrapper onClick={toggle}>
           {title}
           <ArrowIcon
@@ -89,6 +95,7 @@ const GalleryToggle = () => {
             alt={isActive ? 'Icône flèche du haut' : 'Icône flèche du bas'}
           />
         </ToggleTextWrapper>
+        {/* Contenu de la bascule, affiché uniquement si la bascule est active */}
         {isActive && content}
       </>
     )
@@ -96,6 +103,7 @@ const GalleryToggle = () => {
 
   return (
     <Section>
+      {/* Basculer pour la description */}
       <ToggleWrapper>
         <Toggle
           title="Description"
@@ -106,6 +114,7 @@ const GalleryToggle = () => {
           }
         />
       </ToggleWrapper>
+      {/* Bascule pour les équipements */}
       <ToggleWrapper>
         <Toggle
           title="Equipements"
