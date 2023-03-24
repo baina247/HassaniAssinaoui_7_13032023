@@ -25,15 +25,20 @@ const RatingInformation = () => {
   const { rating } = logement
 
   const stars = new Array(5).fill(grayStar).fill(redStar, 0, rating)
-  
+
   return (
     <Rating>
       <Rate>
         {stars.map((star, index) => (
-          <StarImage src={star} key={index} alt="star" />
+          <StarImage
+            src={star}
+            alt={index < rating ? 'Etoile rouge' : 'Etoile grise'}
+            key={index}
+          />
         ))}
       </Rate>
     </Rating>
   )
 }
+
 export default RatingInformation
