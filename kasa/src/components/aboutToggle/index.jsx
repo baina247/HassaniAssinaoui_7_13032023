@@ -3,23 +3,20 @@ import styled from 'styled-components'
 import DownArrowImg from '../../assets/down_arrow.svg'
 import UpArrowImg from '../../assets/up_arrow.svg'
 import colors from '../../utils/style/colors'
+import aboutData from '../../data/aboutData'
 
 const Section = styled.div`
   display: flex;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
 `
 
-const AboutTextWrapper = styled.div`
+const TextWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-style: normal;
   width: 80%;
   height: auto;
   font-weight: 500;
@@ -28,12 +25,12 @@ const AboutTextWrapper = styled.div`
   text-align: center;
   color: ${colors.primary};
   background: ${colors.secondary};
-  align-items: center;
   padding: 10px;
   margin-top: 30px;
   border-radius: 5px;
   cursor: pointer;
 `
+
 const ToggleContentWrapper = styled.div`
   position: relative;
   top: -10px;
@@ -44,8 +41,7 @@ const ToggleContentWrapper = styled.div`
   padding: 10px;
 `
 
-const AboutTextContent = styled.p`
-  font-style: normal;
+const TextContent = styled.p`
   font-weight: 400;
   font-size: 24px;
   color: ${colors.secondary};
@@ -58,9 +54,11 @@ const ArrowIcon = styled.img`
   object-fit: cover;
 `
 
+// Définir le composant principal pour la bascule de la section À propos
 const AboutToggle = () => {
   const [activeIndexes, setActiveIndexes] = useState([])
 
+  // Définissez la fonction qui bascule le contenu lorsque la flèche est cliquée
   const toggleContent = (index) => {
     if (activeIndexes.includes(index)) {
       setActiveIndexes(activeIndexes.filter((i) => i !== index))
@@ -69,91 +67,52 @@ const AboutToggle = () => {
     }
   }
 
+  // Définissez le contenu qui est basculé en fonction du titre transmis
+  const content = (title) => {
+    switch (title) {
+      case 'Fiable':
+        return aboutData.fiable
+      case 'Respect':
+        return aboutData.respect
+      case 'Service':
+        return aboutData.service
+      case 'Responsabilité':
+        return aboutData.responsabilité
+      default:
+        return ''
+    }
+  }
+
+  // Définir les sections de texte individuelles qui peuvent être basculées
+  const TextSection = ({ title, index }) => (
+    <>
+      <TextWrapper onClick={() => toggleContent(index)}>
+        {title}
+        <ArrowIcon
+          src={activeIndexes.includes(index) ? UpArrowImg : DownArrowImg}
+          alt={
+            activeIndexes.includes(index)
+              ? 'Icône flèche du haut'
+              : 'Icône flèche du bas'
+          }
+        />
+      </TextWrapper>
+      {/* N'afficher le contenu que si l'index se trouve dans le tableau activeIndexes */}
+      {activeIndexes.includes(index) && (
+        <ToggleContentWrapper>
+          <TextContent>{content(title)}</TextContent>
+        </ToggleContentWrapper>
+      )}
+    </>
+  )
+
   return (
+    // Rendre chaque section de texte individuelle avec son titre et son index respectifs
     <Section>
-      <AboutTextWrapper onClick={() => toggleContent(0)}>
-        Fiable
-        <ArrowIcon
-          src={activeIndexes.includes(0) ? UpArrowImg : DownArrowImg}
-          alt={
-            activeIndexes.includes(0)
-              ? 'Icône flèche du haut'
-              : 'Icône flèche du bas'
-          }
-        />
-      </AboutTextWrapper>
-      {activeIndexes.includes(0) && (
-        <ToggleContentWrapper>
-          <AboutTextContent>
-            Les annonces postées sur Kasa garantissent une fiabilité totale. Les
-            photos sont conformes aux logements, et toutes les informations sont
-            régulièrement vérifiées par nos equipes.
-          </AboutTextContent>
-        </ToggleContentWrapper>
-      )}
-      <AboutTextWrapper onClick={() => toggleContent(1)}>
-        Respect
-        <ArrowIcon
-          src={activeIndexes.includes(1) ? UpArrowImg : DownArrowImg}
-          alt={
-            activeIndexes.includes(1)
-              ? 'Icône flèche du haut'
-              : 'Icône flèche du bas'
-          }
-        />
-      </AboutTextWrapper>
-      {activeIndexes.includes(1) && (
-        <ToggleContentWrapper>
-          <AboutTextContent>
-            La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
-            comportement discriminatoire ou de perturbation du voisinage
-            entraînera une exclusion de notre plateforme.
-          </AboutTextContent>
-        </ToggleContentWrapper>
-      )}
-      <AboutTextWrapper onClick={() => toggleContent(2)}>
-        Service
-        <ArrowIcon
-          src={activeIndexes.includes(2) ? UpArrowImg : DownArrowImg}
-          alt={
-            activeIndexes.includes(2)
-              ? 'Icône flèche du haut'
-              : 'Icône flèche du bas'
-          }
-        />
-      </AboutTextWrapper>
-      {activeIndexes.includes(2) && (
-        <ToggleContentWrapper>
-          <AboutTextContent>
-            Nos équipes se tiennent à votre disposition pour vous fournir une
-            expérience parfaite. N'hésitez pas à nous contacter si vous avez la
-            moindre question.
-          </AboutTextContent>
-        </ToggleContentWrapper>
-      )}
-      <AboutTextWrapper onClick={() => toggleContent(3)}>
-        Responsabilité
-        <ArrowIcon
-          src={activeIndexes.includes(3) ? UpArrowImg : DownArrowImg}
-          alt={
-            activeIndexes.includes(3)
-              ? 'Icône flèche du haut'
-              : 'Icône flèche du bas'
-          }
-        />
-      </AboutTextWrapper>
-      {activeIndexes.includes(3) && (
-        <ToggleContentWrapper>
-          <AboutTextContent>
-            La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
-            pour les voyageurs, chaque logement correspond aux critères de
-            sécurité établis par nos services. En laissant une note aussi bien à
-            l'hôte qu'au locataire, cela permet à nos équipes de vérifier que
-            les standards sont bien respectés. Nous organisons également des
-            ateliers sur la sécurité domestique pour nos hôtes.
-          </AboutTextContent>
-        </ToggleContentWrapper>
-      )}
+      <TextSection title="Fiable" index={0} />
+      <TextSection title="Respect" index={1} />
+      <TextSection title="Service" index={2} />
+      <TextSection title="Responsabilité" index={3} />
     </Section>
   )
 }
