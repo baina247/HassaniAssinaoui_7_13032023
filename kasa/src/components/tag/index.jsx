@@ -22,9 +22,9 @@ const Tag = styled.span`
 `
 
 const TagInformation = () => {
-  const { idLogement } = useParams()
-  const logement = data.find((product) => product.id === idLogement)
-  const { tags } = logement
+  const { idLogement } = useParams() // Obtenir l'ID du logement actuel à partir de l'URL
+  const logement = data.find((product) => product.id === idLogement) // Trouver l'objet logement dans les données à l'aide de l'ID
+  const { tags } = logement // Récupérer l'objet tags à partir de l'objet logement
   return (
     <Tags>
       {tags.map((tag, index) => (

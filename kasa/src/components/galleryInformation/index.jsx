@@ -51,10 +51,15 @@ const TitleWrapper = styled.div`
 `
 
 const GalleryInformation = () => {
-  const { idLogement } = useParams()
-  const logement = data.find((product) => product.id === idLogement)
-  const { title } = logement
-  const { location } = logement
+  // Obtenir idLogement à partir de l'URL
+  const { idLogement } = useParams();
+
+  // Trouver l'objet logement avec l'identifiant correspondant
+  const logement = data.find((product) => product.id === idLogement);
+
+  // Déstructurer l'objet logement pour obtenir le titre et la localisation
+  const { title } = logement;
+  const { location } = logement;
 
   return (
     <Wrapper>
@@ -70,7 +75,7 @@ const GalleryInformation = () => {
         <RatingInformation />
       </RightSection>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default GalleryInformation
+export default GalleryInformation;

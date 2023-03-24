@@ -22,10 +22,10 @@ const Image = styled.img`
 `
 
 const HostInformation = () => {
-  const { idLogement } = useParams()
-  const logement = data.find((product) => product.id === idLogement)
-  const { host } = logement
-  const { name, picture } = host
+  const { idLogement } = useParams() // Obtenir l'ID du logement actuel à partir de l'URL
+  const logement = data.find((product) => product.id === idLogement) // Trouver l'objet logement dans les données à l'aide de l'ID
+  const { host } = logement // Récupérer l'objet host à partir de l'objet logement
+  const { name, picture } = host // Obtenir le nom et l'image de l'objet hôte
 
   return (
     <Host>
