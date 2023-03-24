@@ -9,11 +9,11 @@ import Gallery from './components/gallery/index'
 import Error from './pages/404/index'
 import Footer from './components/footer/index'
 
-// Nouvelle syntax React 18
+// Nouvelle syntaxe React 18
 const root = document.getElementById('root')
 
 ReactDOM.createRoot(root).render(
-  //Nouvelle syntax react-router-dom v6.9.0
+  // Nouvelle syntaxe "Routes" à la place de "Switch" react-router-dom v6.9.0
   <React.StrictMode>
     <Router>
       <StyledGlobalStyle />
