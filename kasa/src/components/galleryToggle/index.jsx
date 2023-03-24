@@ -42,6 +42,7 @@ const ToggleContentWrapper = styled.div`
   background-color: ${colors.dark};
   border-radius: 10px;
   flex: 1;
+  min-height: 200px;
 `
 
 const ToggleTextContent = styled.p`
