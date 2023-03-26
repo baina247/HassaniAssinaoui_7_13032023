@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 
 const ErrorWrapper = styled.div`
-  margin: 100px;
+  margin: 5vw;
   display: flex;
   flex-direction: column;
   background-color: ${colors.background};
@@ -13,18 +13,18 @@ const ErrorWrapper = styled.div`
 const ErrorText = styled.h1`
   font-style: normal;
   font-weight: 700;
-  font-size: 288px;
+  font-size: 10vw;
   display: flex;
   align-items: center;
   text-align: center;
   color: ${colors.secondary};
-  margin-bottom: 24px;
+  margin-bottom: 3vw;
 `
 
 const ErrorSubtitle = styled.h2`
   font-style: normal;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 2.6vw;
   display: flex;
   align-items: flex-end;
   color: ${colors.secondary};
@@ -32,9 +32,9 @@ const ErrorSubtitle = styled.h2`
 
 const ErrorBackToHome = styled.a`
   font-style: normal;
-  margin: 125px;
+  margin: 10vw;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.6vw;
   display: flex;
   align-items: flex-end;
   text-decoration-line: underline;

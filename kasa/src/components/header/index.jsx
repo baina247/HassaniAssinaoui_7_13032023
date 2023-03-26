@@ -12,10 +12,18 @@ const HeaderWrapper = styled.header`
   height: 68px;
   position: relative;
   padding: 3rem 6rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
 `
 
 const Logo = styled.img`
   height: 50px;
+
+  @media (max-width: 768px) {
+    height: 30px;
+  }
 `
 
 function Header() {
