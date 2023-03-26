@@ -11,7 +11,7 @@ const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
   background: ${colors.black};
-  height: 10rem;
+  height: 15rem;
   padding-top: 3rem;
 `
 
