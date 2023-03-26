@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import Carousel from '../carousel'
 import GalleryInformation from '../galleryInformation'
-import GalleryToggle from '../galleryToggle'
+import GalleryCollapse from '../galleryCollapse'
 import Error from '../../pages/404/index'
 import logements from '../../data/logements.json'
 
@@ -30,7 +30,7 @@ const Gallery = () => {
     <Section>
       <Carousel />
       <GalleryInformation />
-      <GalleryToggle />
+      <GalleryCollapse />
     </Section>
   )
 }

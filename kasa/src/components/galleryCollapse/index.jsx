@@ -10,6 +10,10 @@ const Section = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 845px) {
+        flex-direction: column;
+
+  }
 `
 
 const ArrowIcon = styled.img`
@@ -19,7 +23,7 @@ const ArrowIcon = styled.img`
   object-fit: cover;
 `
 
-const ToggleTextWrapper = styled.div`
+const CollapseTextWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +38,7 @@ const ToggleTextWrapper = styled.div`
   line-height: 26px;
 `
 
-const ToggleContentWrapper = styled.div`
+const CollapseContentWrapper = styled.div`
   position: relative;
   margin-top: -10px;
   padding: 15px;
@@ -45,17 +49,21 @@ const ToggleContentWrapper = styled.div`
   min-height: 200px;
 `
 
-const ToggleTextContent = styled.p`
+const CollapseTextContent = styled.p`
   weight: 400;
   font-size: 18px;
   line-height: 26px;
   color: ${colors.secondary};
 `
 
-const ToggleWrapper = styled.div`
+const CollapseWrapper = styled.div`
   width: 45%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 845px) {
+    width: unset;
+
+  }
 `
 
 const EquipmentsList = styled.ul`
@@ -73,12 +81,12 @@ const Collapse = ({ title, children }) => {
 
   return (
     <div>
-      <ToggleTextWrapper onClick={() => setIsOpen(!isOpen)}>
+      <CollapseTextWrapper onClick={() => setIsOpen(!isOpen)}>
         {title}
-        <ArrowIcon src={isOpen ? UpArrowImg : DownArrowImg} alt="Toggle icon" />
-      </ToggleTextWrapper>
+        <ArrowIcon src={isOpen ? UpArrowImg : DownArrowImg} alt="Collapse icon" />
+      </CollapseTextWrapper>
       {isOpen ? (
-        <ToggleContentWrapper>{children}</ToggleContentWrapper>
+        <CollapseContentWrapper>{children}</CollapseContentWrapper>
       ) : null}
     </div>
   );
@@ -95,23 +103,23 @@ const GalleryToggle = () => {
   return (
     <Section>
       {/* Bascule pour la description */}
-      <ToggleWrapper>
+      <CollapseWrapper>
         <Collapse title="Description">
-          <ToggleTextContent>{description}</ToggleTextContent>
+          <CollapseTextContent>{description}</CollapseTextContent>
         </Collapse>
-      </ToggleWrapper>
+      </CollapseWrapper>
       {/* Bascule pour les équipements */}
-      <ToggleWrapper>
+      <CollapseWrapper>
         <Collapse title="Equipements">
           <EquipmentsList>
             {equipments.map((equipment, index) => (
               <EquipmentsListItem key={index}>
-                <ToggleTextContent>{equipment}</ToggleTextContent>
+                <CollapseTextContent>{equipment}</CollapseTextContent>
               </EquipmentsListItem>
             ))}
           </EquipmentsList>
         </Collapse>
-      </ToggleWrapper>
+      </CollapseWrapper>
     </Section>
   )
 }

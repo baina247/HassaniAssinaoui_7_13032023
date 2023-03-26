@@ -8,6 +8,9 @@ import grayStar from '../../assets/gray_star.webp'
 const Rating = styled.div`
   font-weight: bold;
   align-self: flex-end;
+  @media (max-width: 1435px) {
+    align-self: center;
+  }
 `
 
 const Rate = styled.div`

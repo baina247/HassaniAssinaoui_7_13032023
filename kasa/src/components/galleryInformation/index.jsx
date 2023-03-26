@@ -8,11 +8,17 @@ import RatingInformation from '../rating'
 import HostInformation from '../host'
 
 const Wrapper = styled.div`
-  margin: 30px 0 0 0;
+  margin: 30px 0px 0px;
   display: flex;
-  width: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+  align-items: stretch;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const LeftSection = styled.div`
@@ -42,6 +48,13 @@ const RightSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: 1435px) {
+    align-items: center;
+    margin-top: 0px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+  }
 `
 
 const TitleWrapper = styled.div`
@@ -52,14 +65,14 @@ const TitleWrapper = styled.div`
 
 const GalleryInformation = () => {
   // Obtenir idLogement à partir de l'URL
-  const { idLogement } = useParams();
+  const { idLogement } = useParams()
 
   // Trouver l'objet logement avec l'identifiant correspondant
-  const logement = data.find((product) => product.id === idLogement);
+  const logement = data.find((product) => product.id === idLogement)
 
   // Déstructurer l'objet logement pour obtenir le titre et la localisation
-  const { title } = logement;
-  const { location } = logement;
+  const { title } = logement
+  const { location } = logement
 
   return (
     <Wrapper>
@@ -75,7 +88,7 @@ const GalleryInformation = () => {
         <RatingInformation />
       </RightSection>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default GalleryInformation;
+export default GalleryInformation

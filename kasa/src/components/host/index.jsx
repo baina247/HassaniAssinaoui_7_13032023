@@ -12,6 +12,10 @@ const Host = styled.h2`
   display: flex;
   width: 75%;
   align-items: center;
+  @media (max-width: 1435px) {
+    margin-bottom: unset;
+    width: min-content;
+  }
 `
 
 const Image = styled.img`
