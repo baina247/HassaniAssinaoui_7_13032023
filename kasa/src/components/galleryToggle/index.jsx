@@ -103,7 +103,7 @@ const GalleryToggle = () => {
 
   return (
     <Section>
-      {/* Basculer pour la description */}
+      {/* Bascule pour la description */}
       <ToggleWrapper>
         <Toggle
           title="Description"
