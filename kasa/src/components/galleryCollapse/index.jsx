@@ -68,6 +68,22 @@ const EquipmentsListItem = styled.li`
   margin-bottom: 10px;
 `
 
+const Collapse = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <ToggleTextWrapper onClick={() => setIsOpen(!isOpen)}>
+        {title}
+        <ArrowIcon src={isOpen ? UpArrowImg : DownArrowImg} alt="Toggle icon" />
+      </ToggleTextWrapper>
+      {isOpen ? (
+        <ToggleContentWrapper>{children}</ToggleContentWrapper>
+      ) : null}
+    </div>
+  );
+};
+
 const GalleryToggle = () => {
   // Récupérer le paramètre idLogement à partir de l'URL
   const { idLogement } = useParams()
@@ -76,60 +92,25 @@ const GalleryToggle = () => {
   // Déstructurer la description et les équipements de l'objet logement
   const { description, equipments } = logement
 
-  const Toggle = ({ title, content }) => {
-    // Définir l'état de la bascule
-    const [isActive, setIsActive] = useState(false)
-
-    // Fonction pour basculer l'état
-    const toggle = () => {
-      setIsActive(!isActive)
-    }
-
-    return (
-      <>
-        {/* Titre de la bascule, avec une icône de flèche qui change en fonction de l'état */}
-        <ToggleTextWrapper onClick={toggle}>
-          {title}
-          <ArrowIcon
-            src={isActive ? UpArrowImg : DownArrowImg}
-            alt={isActive ? 'Icône flèche du haut' : 'Icône flèche du bas'}
-          />
-        </ToggleTextWrapper>
-        {/* Contenu de la bascule, affiché uniquement si la bascule est active */}
-        {isActive && content}
-      </>
-    )
-  }
-
   return (
     <Section>
       {/* Bascule pour la description */}
       <ToggleWrapper>
-        <Toggle
-          title="Description"
-          content={
-            <ToggleContentWrapper>
-              <ToggleTextContent>{description}</ToggleTextContent>
-            </ToggleContentWrapper>
-          }
-        />
+        <Collapse title="Description">
+          <ToggleTextContent>{description}</ToggleTextContent>
+        </Collapse>
       </ToggleWrapper>
       {/* Bascule pour les équipements */}
       <ToggleWrapper>
-        <Toggle
-          title="Equipements"
-          content={
-            <ToggleContentWrapper>
-              <EquipmentsList>
-                {equipments.map((equipment, index) => (
-                  <EquipmentsListItem key={index}>
-                    <ToggleTextContent>{equipment}</ToggleTextContent>
-                  </EquipmentsListItem>
-                ))}
-              </EquipmentsList>
-            </ToggleContentWrapper>
-          }
-        />
+        <Collapse title="Equipements">
+          <EquipmentsList>
+            {equipments.map((equipment, index) => (
+              <EquipmentsListItem key={index}>
+                <ToggleTextContent>{equipment}</ToggleTextContent>
+              </EquipmentsListItem>
+            ))}
+          </EquipmentsList>
+        </Collapse>
       </ToggleWrapper>
     </Section>
   )

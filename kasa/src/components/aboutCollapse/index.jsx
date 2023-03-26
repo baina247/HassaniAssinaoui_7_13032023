@@ -31,7 +31,7 @@ const TextWrapper = styled.div`
   cursor: pointer;
 `
 
-const ToggleContentWrapper = styled.div`
+const CollapseContentWrapper = styled.div`
   position: relative;
   top: -10px;
   width: 80%;
@@ -55,16 +55,17 @@ const ArrowIcon = styled.img`
 `
 
 // Définir le composant principal pour la bascule de la section À propos
-const AboutToggle = () => {
+const AboutCollapse = () => {
   const [activeIndexes, setActiveIndexes] = useState([])
 
   // Définissez la fonction qui bascule le contenu lorsque la flèche est cliquée
-  const toggleContent = (index) => {
-    if (activeIndexes.includes(index)) {
-      setActiveIndexes(activeIndexes.filter((i) => i !== index))
-    } else {
-      setActiveIndexes([...activeIndexes, index])
-    }
+  const collapseContent = (index) => {
+    setActiveIndexes((activeIndexes) => {
+      const indexIsOpen = activeIndexes.includes(index)
+      return indexIsOpen
+        ? activeIndexes.filter((i) => i !== index)
+        : [...activeIndexes, index]
+    })
   }
 
   // Définissez le contenu qui est basculé en fonction du titre transmis
@@ -84,9 +85,9 @@ const AboutToggle = () => {
   }
 
   // Définir les sections de texte individuelles qui peuvent être basculées
-  const TextSection = ({ title, index }) => (
+  const CollapseSection = ({ title, index }) => (
     <>
-      <TextWrapper onClick={() => toggleContent(index)}>
+      <TextWrapper onClick={() => collapseContent(index)}>
         {title}
         <ArrowIcon
           src={activeIndexes.includes(index) ? UpArrowImg : DownArrowImg}
@@ -99,9 +100,9 @@ const AboutToggle = () => {
       </TextWrapper>
       {/* N'afficher le contenu que si l'index se trouve dans le tableau activeIndexes */}
       {activeIndexes.includes(index) && (
-        <ToggleContentWrapper>
+        <CollapseContentWrapper>
           <TextContent>{content(title)}</TextContent>
-        </ToggleContentWrapper>
+        </CollapseContentWrapper>
       )}
     </>
   )
@@ -109,12 +110,12 @@ const AboutToggle = () => {
   return (
     // Rendre chaque section de texte individuelle avec son titre et son index respectifs
     <Section>
-      <TextSection title="Fiable" index={0} />
-      <TextSection title="Respect" index={1} />
-      <TextSection title="Service" index={2} />
-      <TextSection title="Responsabilité" index={3} />
+      <CollapseSection title="Fiable" index={0} />
+      <CollapseSection title="Respect" index={1} />
+      <CollapseSection title="Service" index={2} />
+      <CollapseSection title="Responsabilité" index={3} />
     </Section>
   )
 }
 
-export default AboutToggle
+export default AboutCollapse

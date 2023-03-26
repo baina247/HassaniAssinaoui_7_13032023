@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import AboutImg from '../../assets/about_img.webp'
-import AboutToggle from '../../components/aboutToggle'
+import AboutCollapse from '../../components/aboutCollapse'
 
 const Section = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const Banner = () => {
   return (
     <Section>
       <AboutImage />
-      <AboutToggle />
+      <AboutCollapse />
     </Section>
   )
 }
