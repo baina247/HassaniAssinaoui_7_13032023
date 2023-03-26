@@ -17,7 +17,7 @@ const TextWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: auto;
   font-weight: 500;
   font-size: 24px;
@@ -29,16 +29,24 @@ const TextWrapper = styled.div`
   margin-top: 30px;
   border-radius: 5px;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
 `
 
 const CollapseContentWrapper = styled.div`
   position: relative;
   top: -10px;
-  width: 80%;
+  width: 100%;
   z-index: -1;
   background: ${colors.dark};
   border-radius: 5px;
   padding: 10px;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
 `
 
 const TextContent = styled.p`
@@ -54,11 +62,9 @@ const ArrowIcon = styled.img`
   object-fit: cover;
 `
 
-// Définir le composant principal pour la bascule de la section À propos
 const AboutCollapse = () => {
   const [activeIndexes, setActiveIndexes] = useState([])
 
-  // Définissez la fonction qui bascule le contenu lorsque la flèche est cliquée
   const collapseContent = (index) => {
     setActiveIndexes((activeIndexes) => {
       const indexIsOpen = activeIndexes.includes(index)
@@ -68,7 +74,6 @@ const AboutCollapse = () => {
     })
   }
 
-  // Définissez le contenu qui est basculé en fonction du titre transmis
   const content = (title) => {
     switch (title) {
       case 'Fiable':
@@ -84,7 +89,6 @@ const AboutCollapse = () => {
     }
   }
 
-  // Définir les sections de texte individuelles qui peuvent être basculées
   const CollapseSection = ({ title, index }) => (
     <>
       <TextWrapper onClick={() => collapseContent(index)}>
@@ -98,7 +102,6 @@ const AboutCollapse = () => {
           }
         />
       </TextWrapper>
-      {/* N'afficher le contenu que si l'index se trouve dans le tableau activeIndexes */}
       {activeIndexes.includes(index) && (
         <CollapseContentWrapper>
           <TextContent>{content(title)}</TextContent>
@@ -108,7 +111,6 @@ const AboutCollapse = () => {
   )
 
   return (
-    // Rendre chaque section de texte individuelle avec son titre et son index respectifs
     <Section>
       <CollapseSection title="Fiable" index={0} />
       <CollapseSection title="Respect" index={1} />
