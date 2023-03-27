@@ -16,6 +16,13 @@ const Host = styled.h2`
     margin-bottom: unset;
     width: min-content;
   }
+
+  @media (max-width: 380px) {
+    height: unset;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 `
 
 const Image = styled.img`

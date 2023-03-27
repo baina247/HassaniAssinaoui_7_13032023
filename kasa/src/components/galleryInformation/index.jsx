@@ -55,6 +55,10 @@ const RightSection = styled.div`
     justify-content: space-between;
     width: 100%;
   }
+  
+  @media (max-width: 380px) {
+    flex-wrap: wrap;
+  }
 `
 
 const TitleWrapper = styled.div`

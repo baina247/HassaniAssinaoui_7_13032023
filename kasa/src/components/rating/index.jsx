@@ -11,6 +11,12 @@ const Rating = styled.div`
   @media (max-width: 1435px) {
     align-self: center;
   }
+  
+  @media (max-width: 380px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `
 
 const Rate = styled.div`

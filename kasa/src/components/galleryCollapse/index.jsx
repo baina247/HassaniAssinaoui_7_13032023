@@ -11,8 +11,7 @@ const Section = styled.div`
   justify-content: space-between;
   width: 100%;
   @media (max-width: 845px) {
-        flex-direction: column;
-
+    flex-direction: column;
   }
 `
 
@@ -62,7 +61,6 @@ const CollapseWrapper = styled.div`
   flex-direction: column;
   @media (max-width: 845px) {
     width: unset;
-
   }
 `
 
@@ -77,20 +75,23 @@ const EquipmentsListItem = styled.li`
 `
 
 const Collapse = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div>
       <CollapseTextWrapper onClick={() => setIsOpen(!isOpen)}>
         {title}
-        <ArrowIcon src={isOpen ? UpArrowImg : DownArrowImg} alt="Collapse icon" />
+        <ArrowIcon
+          src={isOpen ? UpArrowImg : DownArrowImg}
+          alt="Collapse icon"
+        />
       </CollapseTextWrapper>
       {isOpen ? (
         <CollapseContentWrapper>{children}</CollapseContentWrapper>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
 const GalleryToggle = () => {
   // Récupérer le paramètre idLogement à partir de l'URL

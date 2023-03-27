@@ -9,6 +9,9 @@ const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   height: 600px;
+  @media (max-width: 768px) {
+    height: unset;
+  }
 `
 
 const CarouselContent = styled.div`

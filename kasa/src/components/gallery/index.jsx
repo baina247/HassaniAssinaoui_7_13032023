@@ -13,6 +13,9 @@ const Section = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 6rem 0 6rem;
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
 `
 
 const Gallery = () => {

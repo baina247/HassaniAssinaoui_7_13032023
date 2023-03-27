@@ -48,6 +48,9 @@ const CardImage = styled.img`
   border-radius: 10px;
   object-fit: cover;
   filter: brightness(80%);
+  @media (max-width: 380px) {
+    width: unset;
+  }
 `
 
 const CardImageWrapper = styled.div`
@@ -57,6 +60,9 @@ const CardImageWrapper = styled.div`
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  @media (max-width: 380px) {
+    height: 220px;
+  }
 
   &:hover {
     transform: scale(1.05);
