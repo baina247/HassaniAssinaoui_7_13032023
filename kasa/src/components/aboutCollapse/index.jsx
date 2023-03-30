@@ -30,8 +30,8 @@ const TextWrapper = styled.div`
   border-radius: 5px;
   cursor: pointer;
 
-  @media (min-width: 768px) {
-    width: 80%;
+  @media (max-width: 768px) {
+    font-size: 16px;
   }
 `
 
@@ -43,16 +43,15 @@ const CollapseContentWrapper = styled.div`
   background: ${colors.dark};
   border-radius: 5px;
   padding: 10px;
-
-  @media (min-width: 768px) {
-    width: 80%;
-  }
 `
 
 const TextContent = styled.p`
   font-weight: 400;
   font-size: 24px;
   color: ${colors.secondary};
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `
 
 const ArrowIcon = styled.img`
@@ -60,6 +59,10 @@ const ArrowIcon = styled.img`
   width: 20px;
   height: 20px;
   object-fit: cover;
+  @media (max-width: 768px) {
+    width: 16px;
+    height: 10px;
+  }
 `
 
 const AboutCollapse = () => {

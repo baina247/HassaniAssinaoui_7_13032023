@@ -26,6 +26,14 @@ const BannerImage = styled.div`
   background-size: cover;
   background-position: center;
   border-radius: 25px;
+  @media (max-width: 768px) {
+    height: 170px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 425px) {
+    height: 110px;
+  }
 `
 const BannerText = styled.h1`
   font-style: normal;
@@ -33,6 +41,10 @@ const BannerText = styled.h1`
   font-size: 48px;
   text-align: center;
   color: ${colors.primary};
+  @media (max-width: 768px) {
+    text-align: left;
+    font-size: 24px;
+  }
 `
 const Banner = () => {
   return (

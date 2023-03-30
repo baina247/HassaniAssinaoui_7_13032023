@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import data from '../../data/logements.json'
 import leftArrow from '../../assets/left_carroussel.webp'
 import rightArrow from '../../assets/right_carroussel.webp'
+import colors from '../../utils/style/colors'
 import { useParams } from 'react-router-dom'
 
 const CarouselContainer = styled.div`
@@ -64,6 +65,19 @@ const RightArrow = styled(Arrow)`
   right: 20px;
 `
 
+const PicturesLength = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${colors.primary};
+  font-weight: 500;
+  font-size: 18px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
 const Carousel = () => {
   // Initialiser les variables d'état
   const [current, setCurrent] = useState(0) // index actuel de l'image affichée
@@ -123,6 +137,11 @@ const Carousel = () => {
           onClick={handleRightArrowClick}
         />
       )}
+
+      {/* Afficher le compteur */}
+      <PicturesLength>
+        {current + 1}/{length}
+      </PicturesLength>
     </CarouselContainer>
   )
 }

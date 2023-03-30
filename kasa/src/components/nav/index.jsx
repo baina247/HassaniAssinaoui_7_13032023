@@ -34,6 +34,10 @@ const NavLink = styled.a`
   &:hover:after {
     width: 50%;
   }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `
 const Navigation = () => {
   return (
