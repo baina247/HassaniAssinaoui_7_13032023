@@ -10,7 +10,11 @@ const Section = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const TextWrapper = styled.div`
