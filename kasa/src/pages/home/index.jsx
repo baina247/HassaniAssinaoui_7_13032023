@@ -6,10 +6,10 @@ import colors from '../../utils/style/colors'
 
 const Body = styled.div`
   background-color: ${colors.background};
-  padding: 0 2rem;
+  padding: 0 6rem;
 
-  @media (min-width: 768px) {
-    padding: 0 6rem;
+  @media (max-width: 768px) {
+    padding: 0 2rem;
   }
 `
 

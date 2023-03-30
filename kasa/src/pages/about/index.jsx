@@ -9,9 +9,10 @@ const Section = styled.div`
   justify-content: center;
   padding: 0 6rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     padding: 0 2rem;
   }
+
 `
 
 const AboutImage = styled.div`

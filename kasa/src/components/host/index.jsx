@@ -17,6 +17,10 @@ const Host = styled.h2`
     width: min-content;
   }
 
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
   @media (max-width: 380px) {
     height: unset;
     display: flex;
@@ -30,6 +34,10 @@ const Image = styled.img`
   height: 64px;
   border-radius: 100%;
   object-fit: cover;
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
 `
 
 const HostInformation = () => {

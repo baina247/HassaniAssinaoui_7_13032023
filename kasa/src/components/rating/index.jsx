@@ -26,6 +26,10 @@ const Rate = styled.div`
 
 const StarImage = styled.img`
   margin-right: 5px;
+
+  @media (max-width: 768px) {
+    height: 18px;
+  }
 `
 
 // Définition du composant RatingInformation

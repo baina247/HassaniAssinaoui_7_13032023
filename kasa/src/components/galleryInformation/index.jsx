@@ -34,6 +34,10 @@ const Title = styled.h1`
   line-height: 52px;
   color: ${colors.secondary};
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 22.5px;
+  }
 `
 
 const Location = styled.div`
@@ -42,6 +46,10 @@ const Location = styled.div`
   line-height: 26px;
   color: ${colors.secondary};
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `
 
 const RightSection = styled.div`

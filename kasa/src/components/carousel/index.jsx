@@ -11,7 +11,7 @@ const CarouselContainer = styled.div`
   width: 100%;
   height: 600px;
   @media (max-width: 768px) {
-    height: unset;
+    height: 300px;
   }
 `
 
@@ -47,6 +47,10 @@ const CarouselImg = styled.img`
   object-fit: cover;
   scroll-snap-align: start;
   border-radius: 25px;
+
+  @media (max-width: 768px) {
+    border-radius: 10px;
+  }
 `
 
 const Arrow = styled.img`
@@ -55,6 +59,11 @@ const Arrow = styled.img`
   transform: translateY(-50%);
   z-index: 2;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    height: 20px;
+    width: 12px;
+  }
 `
 
 const LeftArrow = styled(Arrow)`

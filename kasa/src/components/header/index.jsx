@@ -14,7 +14,7 @@ const HeaderWrapper = styled.header`
   padding: 3rem 6rem;
 
   @media (max-width: 768px) {
-    padding: 2rem 6rem;
+    padding: 2rem 2rem;
     height: 47px;
   }
 

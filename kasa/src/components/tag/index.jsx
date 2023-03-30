@@ -19,6 +19,12 @@ const Tag = styled.span`
   margin-right: 10px;
   border-radius: 15px;
   color: ${colors.primary};
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+    padding: 7px;
+    border-radius: 5px;
+  }
 `
 
 const TagInformation = () => {
