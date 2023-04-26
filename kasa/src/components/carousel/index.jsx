@@ -110,7 +110,7 @@ const Carousel = () => {
   const { idLogement } = useParams()
   const logement = data.find((product) => product.id === idLogement)
 
-  const length = logement.pictures.length // nombre de photos pour le logement actuel
+  const length = logement?.pictures?.length || 0 // nombre de photos pour le logement actuel
 
   return (
     <CarouselContainer>
