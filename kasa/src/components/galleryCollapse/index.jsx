@@ -42,7 +42,7 @@ const CollapseTextWrapper = styled.div`
   @media (max-width: 768px) {
     font-size: 16px;
     border-radius: 5px;
-    padding: 7px
+    padding: 7px;
   }
 `
 

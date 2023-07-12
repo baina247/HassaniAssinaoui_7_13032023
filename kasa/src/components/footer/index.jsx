@@ -7,12 +7,12 @@ const FooterWrapper = styled.footer`
   position: relative;
   bottom: -8.1rem;
   display: flex;
-  align-items: center;
+  ${'' /* align-items: center; */}
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
   background: ${colors.black};
-  height: 15rem;
+  height: 10rem;
   padding-top: 3rem;
   @media (max-width: 768px) {
     padding-top: unset;
