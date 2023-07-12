@@ -58,7 +58,7 @@ const CollapseContentWrapper = styled.div`
 `
 
 const CollapseTextContent = styled.p`
-  weight: 400;
+  font-weight: 400;
   font-size: 18px;
   line-height: 26px;
   color: ${colors.secondary};
