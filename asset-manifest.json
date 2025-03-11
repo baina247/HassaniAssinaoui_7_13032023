@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/HassaniAssinaoui_7_13032023/static/js/main.0a33eb68.js",
+    "main.js": "/HassaniAssinaoui_7_13032023/static/js/main.094c3415.js",
     "static/media/about_img.webp": "/HassaniAssinaoui_7_13032023/static/media/about_img.d0a747b12a2e3442d39c.webp",
     "static/media/banner_img.webp": "/HassaniAssinaoui_7_13032023/static/media/banner_img.bef1cce99c48cf5bc9b0.webp",
     "static/media/logo.webp": "/HassaniAssinaoui_7_13032023/static/media/logo.650823ae6d7db9ecb4d7.webp",
@@ -9,12 +9,12 @@
     "static/media/red_star.webp": "/HassaniAssinaoui_7_13032023/static/media/red_star.afcd327f29d3d798461e.webp",
     "static/media/gray_star.webp": "/HassaniAssinaoui_7_13032023/static/media/gray_star.3a783d62f11cee914b69.webp",
     "static/media/left_carroussel.webp": "/HassaniAssinaoui_7_13032023/static/media/left_carroussel.405cedf116a58d8862e9.webp",
-    "static/media/up_arrow.svg": "/HassaniAssinaoui_7_13032023/static/media/up_arrow.ecf1488896136f153bb1ae871e39b72d.svg",
-    "static/media/down_arrow.svg": "/HassaniAssinaoui_7_13032023/static/media/down_arrow.18426cfa25b94103e78abf14a6463715.svg",
+    "static/media/up_arrow.svg": "/HassaniAssinaoui_7_13032023/static/media/up_arrow.80f69d815b26493a25f1355ee0731cc8.svg",
+    "static/media/down_arrow.svg": "/HassaniAssinaoui_7_13032023/static/media/down_arrow.18f5a3e2a74c56c2c4650d5a2a7f622a.svg",
     "static/media/right_carroussel.webp": "/HassaniAssinaoui_7_13032023/static/media/right_carroussel.f6af0e2b53b4e4adcca3.webp",
-    "main.0a33eb68.js.map": "/HassaniAssinaoui_7_13032023/static/js/main.0a33eb68.js.map"
+    "main.094c3415.js.map": "/HassaniAssinaoui_7_13032023/static/js/main.094c3415.js.map"
   },
   "entrypoints": [
-    "static/js/main.0a33eb68.js"
+    "static/js/main.094c3415.js"
   ]
 }
