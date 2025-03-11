@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import colors from '../../utils/style/colors'
 
 const Nav = styled.nav`
@@ -8,7 +9,7 @@ const Nav = styled.nav`
   align-items: center;
 `
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   position: relative;
   margin-left: 30px;
   font-size: 20px;
@@ -42,8 +43,8 @@ const NavLink = styled.a`
 const Navigation = () => {
   return (
     <Nav>
-      <NavLink href="/">Accueil</NavLink>
-      <NavLink href="/about">A Propos</NavLink>
+      <NavLink to="/">Accueil</NavLink>
+      <NavLink to="/about">A Propos</NavLink>
     </Nav>
   )
 }
