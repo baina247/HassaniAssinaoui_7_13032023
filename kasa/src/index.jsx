@@ -15,7 +15,8 @@ const root = document.getElementById('root')
 ReactDOM.createRoot(root).render(
   // Nouvelle syntaxe "Routes" à la place de "Switch" sur react-router-dom v6.9.0
   <React.StrictMode>
-    <Router>
+    {/*Ajout de basename pour les routes sur Github Pages */}
+    <Router basename="/HassaniAssinaoui_7_13032023">
       <StyledGlobalStyle />
       <Header />
       <Routes>
